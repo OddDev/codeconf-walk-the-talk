@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', event => {
       p.append(currentDescription)
       const li = document.createElement('li')
       li.append(h3, p, button)
-      recipeList.append(li)
+      recipelist.append(li)
     });
   }
 

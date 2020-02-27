@@ -1,7 +1,5 @@
-const recipeList = document.querySelector('#recipelist')
-
 function renderList() {
-  recipeList.innerHTML = ''
+  recipelist.innerHTML = ''
   Object.keys(localStorage).forEach(key => {
     if (key.startsWith('editor')) {
       return;
@@ -25,11 +23,7 @@ function renderList() {
 
 renderList()
 
-const addRecipe = document.querySelector('#addrecipe')
-const recipeTitle = document.querySelector('#recipetitle')
-const recipeDescription = document.querySelector('#recipedescription')
-
-addRecipe.addEventListener('click', () => {
-  localStorage.setItem(recipeTitle.value, recipeDescription.value)
+addrecipe.addEventListener('click', () => {
+  localStorage.setItem(recipetitle.value, recipedescription.value)
   renderList()
 })

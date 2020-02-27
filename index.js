@@ -1,5 +1,7 @@
+const recipeList = document.querySelector('#recipelist')
+
 function renderList() {
-  recipelist.innerHTML = ''
+  recipeList.innerHTML = ''
   Object.keys(localStorage).forEach(key => {
     if (key.startsWith('editor')) {
       return;
@@ -17,13 +19,17 @@ function renderList() {
     p.append(currentDescription)
     const li = document.createElement('li')
     li.append(h3, p, button)
-    recipelist.append(li)
+    recipeList.append(li)
   });
 }
 
 renderList()
 
-addrecipe.addEventListener('click', () => {
-  localStorage.setItem(recipetitle.value, recipedescription.value)
+const addRecipe = document.querySelector('#addrecipe')
+const recipeTitle = document.querySelector('#recipetitle')
+const recipeDescription = document.querySelector('#recipedescription')
+
+addRecipe.addEventListener('click', () => {
+  localStorage.setItem(recipeTitle.value, recipeDescription.value)
   renderList()
 })
